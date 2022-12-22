@@ -30,11 +30,11 @@ use sp_core::crypto::Pair;
 use sp_runtime::{traits::GetRuntimeBlockType, MultiSignature, MultiSigner};
 use sp_std::prelude::*;
 
-pub const CONTRACTS_MODULE: &str = "Contracts";
-pub const CONTRACTS_PUT_CODE: &str = "put_code";
-pub const CONTRACTS_INSTANTIATE: &str = "instantiate";
-pub const CONTRACTS_INSTANTIATE_WITH_CODE: &str = "instantiate_with_code";
-pub const CONTRACTS_CALL: &str = "call";
+pub const ACCOUNT_MODULE: &str = "AccountAbstraction";
+pub const ACCOUNT_PUT_CODE: &str = "put_code";
+pub const ACCOUNT_INSTANTIATE: &str = "instantiate";
+pub const ACCOUNT_INSTANTIATE_WITH_CODE: &str = "instantiate_with_code";
+pub const ACCOUNT_CALL: &str = "call";
 
 type Gas = u64;
 type Data = Vec<u8>;
@@ -86,7 +86,7 @@ where
 		gas_limit: Gas,
 		code: Data,
 	) -> ContractPutCodeXt<Params::SignedExtra> {
-		compose_extrinsic!(self, CONTRACTS_MODULE, CONTRACTS_PUT_CODE, Compact(gas_limit), code)
+		compose_extrinsic!(self, ACCOUNT_MODULE, ACCOUNT_PUT_CODE, Compact(gas_limit), code)
 	}
 
 	pub fn contract_instantiate(
@@ -98,8 +98,8 @@ where
 	) -> ContractInstantiateXt<Params::SignedExtra, BalanceOf<Runtime>, Runtime::Hash> {
 		compose_extrinsic!(
 			self,
-			CONTRACTS_MODULE,
-			CONTRACTS_INSTANTIATE,
+			ACCOUNT_MODULE,
+			ACCOUNT_INSTANTIATE,
 			Compact(endowment),
 			Compact(gas_limit),
 			code_hash,
@@ -117,8 +117,8 @@ where
 	) -> ContractInstantiateWithCodeXt<Params::SignedExtra, BalanceOf<Runtime>> {
 		compose_extrinsic!(
 			self,
-			CONTRACTS_MODULE,
-			CONTRACTS_INSTANTIATE_WITH_CODE,
+			ACCOUNT_MODULE,
+			ACCOUNT_INSTANTIATE_WITH_CODE,
 			Compact(endowment),
 			Compact(gas_limit),
 			code,
@@ -136,8 +136,8 @@ where
 	) -> ContractCallXt<Params::SignedExtra, BalanceOf<Runtime>> {
 		compose_extrinsic!(
 			self,
-			CONTRACTS_MODULE,
-			CONTRACTS_CALL,
+			ACCOUNT_MODULE,
+			ACCOUNT_CALL,
 			dest,
 			Compact(value),
 			Compact(gas_limit),
