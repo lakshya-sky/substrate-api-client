@@ -39,15 +39,15 @@ ws = { version = "0.9.2", optional = true, features = ["ssl"] }
 
 # Substrate no_std dependencies
 frame-metadata = { default-features = false, git = "https://github.com/paritytech/frame-metadata", features = ["v14", "serde_full", "decode"] }
-sp-core = { default-features = false, features = ["full_crypto"], git = "https://github.com/paritytech/substrate.git", branch = "master" }
-sp-runtime = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
-sp-runtime-interface = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
-sp-std = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-core = { default-features = false, features = ["full_crypto"], git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
+sp-runtime = { default-features = false, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
+sp-runtime-interface = { default-features = false, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
+sp-std = { default-features = false, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
 
 # substrate std / wasm only
-frame-support = { optional = true, git = "https://github.com/paritytech/substrate.git", branch = "master" }
-sp-rpc = { optional = true, git = "https://github.com/paritytech/substrate.git", branch = "master" }
-sp-version = { optional = true, git = "https://github.com/paritytech/substrate.git", branch = "master" }
+frame-support = { optional = true, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
+sp-rpc = { optional = true, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
+sp-version = { optional = true, git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
 
 # local deps
 ac-compose-macros = { path = "compose-macros", default-features = false }
@@ -55,7 +55,7 @@ ac-node-api = { path = "node-api", default-features = false }
 ac-primitives = { path = "primitives", default-features = false }
 
 [dev-dependencies]
-kitchensink-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+kitchensink-runtime = { git = "https://github.com/lakshya-sky/substrate.git", branch = "polkadot-v0.9.34" }
 
 
 [features]
